@@ -1,0 +1,62 @@
+﻿@font-face {
+    font-family: CustomFont;
+    src: url(https://fonts.googleapis.com/css?family=Lato);
+}
+
+* {
+    font-family: "Lato", sans-serif;
+}
+
+.col-4 {
+    padding: 0px;
+    width: 100%;
+}
+
+.btn-primary {
+    position: relative;
+    left: -50%;
+    transform: translate(50%, -15%);
+    width: 150px;
+    background-color: dodgerblue;
+    border-color: dodgerblue;
+}
+
+.btn-1 {
+    position: relative;
+    left: -20%;
+    top: -65%;
+    width: 100px;
+    background-color: dodgerblue;
+    border-color: dodgerblue;
+    color: white;
+}
+
+.btn-2 {
+    position: relative;
+    left: -50%;
+    transform: translate(180%, -85%);
+    width: 110px;
+    background-color: dodgerblue;
+    border-color: dodgerblue;
+}
+
+.text-title {
+    color: deepskyblue;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.row {
+    transform: translate(0, 40%);
+    position: relative;
+}
+
+.row1 {
+    transform: translate(0, 60%);
+    position: relative;
+}
+
+.row2 {
+    transform: translate(0, 30%);
+    position: relative;
+}

@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Witaj na stronie!";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/index.css">
+
+<div class="text-center">
+    <div class="text-center-inside">
+        <h1 class="heading-1">Największa baza filmów i seriali bez ograniczeń</h1>
+        <p class="paragraph">Najlepsza jakość, dowolny plan oglądania.</p>
+        <h3 class="heading-3">Wypróbuj już teraz, daj się ponieść najnowszym treściom.</h3>
+        <div class="email-holder">
+            <form id="registerForm" asp-controller="Account" asp-action="Register" method="post">
+                <input class="email-form" name="emailQuery" id="emailQuery" placeholder="Adres e-mail" />
+                <input type="submit" class="submit-form" value="Zapisz się" />
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("registerForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        var emailValue = document.getElementById("emailQuery").value;
+        window.location.href = "/Account/Register?email=" + encodeURIComponent(emailValue);
+    });
+</script>

@@ -1,0 +1,129 @@
+﻿@model CustomIdentity.ViewModels.WatchingViewModel
+@using PlatformaStreamingowa.Models
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Panel odtwarzania";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/watching.css" />
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/CustomIdentity.styles.css" />
+</head>
+
+<div class="player-place">
+    <div class="player-place-1">
+        <div class="player-place-1-inside">
+            <h2 class="category-title">@Model.Title</h2>
+            <iframe width="700" height="394" src="@Model.VideoUrl" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="player-place-2-inside">
+            <p class="description">@Model.Description</p>
+        </div>
+        <div class="player-place-3-inside">
+            @if (Model.Rating > 0)
+            {
+                <p>@Model.Rating.ToString("0.00")⭐</p>
+            }
+            else
+            {
+                <p>Brak ocen</p>
+            }
+        </div>
+    </div>
+    <div class="player-place-2">
+        <form id="ratingForm" asp-controller="Account" asp-action="RateFilm" method="post">
+            <input type="hidden" name="filmId" value="@Model.Id" />
+            <label for="Rating" class="label-tittle">Oceń film:</label>
+            <select name="rating" id="Rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <input class="submit-oceń" type="submit" value="Oceń" />
+        </form>
+    </div>
+    <div class="player-place-3">
+        <form id="commentForm" class="commentForm" asp-controller="Account" asp-action="AddComment" method="post">
+            <input type="hidden" name="filmId" value="@Model.Id" />
+            <div class="form-group">
+                <label for="Content" class="comment-tittle">Dodaj komentarz:</label>
+                <textarea class="form-control form-f" name="content" id="Content" rows="3" required></textarea>
+            </div>
+                <button type="submit" class="button-comment">Dodaj komentarz</button>
+        </form>
+    </div>
+    <div class="player-place-4">
+        <h3 class="p4-com">Komentarze:</h3>
+        <div class="player-place-4-inside">
+            @foreach (var comment in Model.Comments)
+            {
+                <div class="com-template4">
+                    <p class="com-date">@comment.DateAdded.ToString("dd-MM-yyyy HH:mm:ss")</p>
+                    <p class="com-user">@comment.Name:   @comment.Content</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        document.getElementById("ratingForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var formData = new FormData(event.target);
+
+            fetch(event.target.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'RequestVerificationToken': document.getElementsByName('__RequestVerificationToken')[0].value
+                }
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok: ${response.statusText}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    console.log(data);
+                    location.reload();
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+        });
+
+        document.getElementById("commentForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var formData = new FormData(event.target);
+
+            fetch(event.target.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'RequestVerificationToken': document.getElementsByName('__RequestVerificationToken')[0].value
+                }
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok: ${response.statusText}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    console.log(data);
+                    location.reload();
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+        });
+    </script>
+}

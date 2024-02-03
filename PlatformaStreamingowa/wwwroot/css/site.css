@@ -1,0 +1,61 @@
+﻿html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background-image: url('/bg/zdjecie.png');
+    background-attachment: fixed;
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    color: white;
+}
+
+.footer-container {
+    color: white;
+    text-align: center;
+}
+
+nav.navbar {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+}
+nav.navbar.bg-white {
+    background-color: white;
+}
+
+nav.navbar .navbar-brand,
+nav.navbar .nav-link {
+    color: #343a40; 
+}
+
+nav.navbar .nav-link:hover {
+    color: #007bff; 
+}
+
+nav.navbar {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}

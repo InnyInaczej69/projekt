@@ -1,0 +1,56 @@
+﻿@using CustomIdentity.Models
+@model Tuple<IEnumerable<Film>, IEnumerable<Kategoria>>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Panel główny";
+}
+
+<link rel="stylesheet" href="~/css/main.css">
+
+<div class="container-menu">
+    <p class="container-title">Kategorie</p>
+    <div class="category-row">
+        @foreach (var kategoria in Model.Item2)
+        {
+            <a href="#@kategoria.Nazwa" class="category-item">@kategoria.Nazwa</a>
+            <br>
+        }
+    </div>
+</div>
+
+<div class="container mt-3">
+    @foreach (var kategoria in Model.Item2)
+    {
+        <div id="@kategoria.Nazwa" class="row mb-3">
+            <div class="col">
+                <h2>@kategoria.Nazwa</h2>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var film in kategoria.Filmy)
+            {
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <div class="card">
+                        <img src="@film.Miniaturka" class="card-img-top" alt="Miniaturka filmu">
+                        <div class="card-body">
+                            <h5 class="card-title">@film.Tytul</h5>
+                            <p class="card-text">@Html.Raw(film.Opis.Length > 50 ? film.Opis.Substring(0, 50) + "..." : film.Opis)</p>
+                            @if (User.IsInRole("Premium") || (!film.IsPremium && User.Identity.IsAuthenticated))
+                            {
+                                <form asp-controller="Account" asp-action="Watching" method="get">
+                                    <input type="hidden" name="filmId" value="@film.Id" />
+                                    <button type="submit" class="btn btn-primary">Obejrzyj teraz</button>
+                                </form>
+                            }
+                            else if (film.IsPremium)
+                            {
+                                <button class="btn btn-secondary" disabled>Premium</button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

@@ -1,0 +1,202 @@
+﻿@font-face {
+    font-family: CustomFont;
+    src: url(https://fonts.googleapis.com/css?family=Lato);
+}
+
+* {
+    font-family: "Lato", sans-serif;
+}
+
+.player-place {
+    top: 100px;
+    position: relative;
+}
+
+.category-title {
+    color: white;
+    text-shadow: 2px 2px 5px red;
+}
+
+.player-place {
+    width: 1250px;
+    position: relative;
+    margin-bottom: 140px;
+}
+
+.player-place-1 {
+    background-color: black;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+    height: 470px;
+}
+
+.player-place-1-inside {
+    display: inline-block;
+    height: 100%;
+    float: left;
+
+}
+
+.player-place-2-inside {
+    display: inline-block;
+    position: relative;
+    height: 350px;
+    width: 400px;
+    margin-left: 25px;
+    margin-top: 45px;
+    color: white;
+}
+
+.player-place-3-inside {
+    position: relative;
+    width: 100px;
+    height: 20px;
+    float: right;
+    color: white;
+
+}
+
+.player-place-2 {
+    margin-top: 10px;
+    background-color: black;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+    height: 50px;
+    width: 250px;
+}
+
+.label-tittle {
+    color: white;
+}
+
+.submit-oceń {
+    text-decoration: none;
+    background-color: red;
+    border: none;
+    margin-left: 15px;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.submit-oceń:hover {
+    background-color: #495057;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.submit-oceń:active {
+    background-color: #343a40;
+}
+
+.player-place-3 {
+    margin-top: 10px;
+    background-color: black;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+    height: 150px;
+    width: 900px;
+    position: relative;
+}
+
+.comment-tittle {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.form-group {
+    width: 700px;
+    height: 200px;
+    float: left;
+    position: relative;
+    display: inline-block;
+}
+
+.form-f {
+    height: 80px;
+}
+
+.button-comment {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: red;
+    top: 29px;
+    margin-left: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    height: 80px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button-comment:hover {
+    background-color: #495057;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.button-comment:active {
+    background-color: #343a40; 
+}
+
+.player-place-4 {
+    margin-top: 10px;
+    background-color: black;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+    height: auto;
+}
+
+.player-place-4-inside {
+    margin-top: 70px;
+    width: 800px;
+}
+
+.p4-com {
+    color: white;
+    position: absolute;
+    left: 35px;
+    border: none;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.com-template4 {
+    color: white;
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.com-user, .com-date {
+    margin: 0px;
+}
+
+.com-date {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.com-user {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+

@@ -1,0 +1,81 @@
+﻿* {
+    font-family: "Lato", sans-serif;
+}
+
+
+.card {
+    width: 18rem; 
+}
+
+.card-img-top {
+    width: 100%; 
+    height: 15vw; 
+    object-fit: cover; 
+}
+
+@font-face {
+    font-family: CustomFont;
+    src: url(https://fonts.googleapis.com/css?family=Lato);
+}
+
+.container-menu {
+    background: white;
+    position: fixed;
+    left: 0;
+    top: 40%;
+    height: auto;
+    width: 220px;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 3px 3px 32px 3px;
+}
+
+.container-title {
+    color: black;
+    text-shadow: 1px 1px 10px dodgerblue;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.category-row {
+    top: 10%;
+    position: relative;
+    height: 80%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.category-item {
+    text-decoration: none;
+    color: dodgerblue;
+    left: 15%;
+    position: relative;
+    margin-top: 50px;
+
+
+    transition: background-color 0.3s, color 0.3s; 
+    
+    &:hover
+
+{
+    background-color: #495057; 
+    color: #ffffff; 
+    cursor: pointer; 
+}
+
+
+&:active {
+    background-color: #343a40; 
+}
+} 
+
+.mt-3 {
+    top: 70px;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.col {
+    color: white;
+    text-shadow: 2px 2px 5px red;
+}
