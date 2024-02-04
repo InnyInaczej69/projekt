@@ -15,8 +15,8 @@ namespace CustomIdentity.ViewModels
         [DataType(DataType.Password)]
         public string? Password { get; set; }
 
-        [Compare("Password", ErrorMessage = "Passwords don't match.")]
-        [Display(Name = "Confirm Password")]
+        [Compare("Password", ErrorMessage = "Has≥a nie pasujπ")]
+        [Display(Name = "Potwierdü has≥o")]
         [DataType(DataType.Password)]
         public string? ConfirmPassword { get; set; }
 

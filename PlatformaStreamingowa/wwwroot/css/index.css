@@ -1,4 +1,13 @@
-﻿.text-center {
+﻿@font-face {
+    font-family: CustomFont;
+    src: url(https://fonts.googleapis.com/css?family=Lato);
+}
+
+* {
+    font-family: "Lato", sans-serif;
+}
+
+.text-center {
     background-color: rgba(255, 255, 255, 0.75);
     border-radius: 20px;
     position: relative;
@@ -39,11 +48,4 @@
 
 .heading-3 {
     font-size: 25px;
-}
-@font-face {
-    font-family: CustomFont;
-    src: url(https://fonts.googleapis.com/css?family=Lato);
-}
-.text-center-inside {
-    font-family: "Lato", sans-serif;
 }

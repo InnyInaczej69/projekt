@@ -1,0 +1,28 @@
+﻿@font-face {
+    font-family: CustomFont;
+    src: url(https://fonts.googleapis.com/css?family=Lato);
+}
+
+* {
+    font-family: "Lato", sans-serif;
+}
+
+.main-container {
+    top: 150px;
+    background-color: white;
+    position: relative;
+    padding: 10px;
+    border-radius: 15px;
+    width: 800px;
+    opacity: 0.9;
+}
+
+.main-title {
+    margin-left: 15px;
+    width: 200px;
+    height: 40px;
+}
+
+.mn2 {
+    top: 170px;
+}

@@ -66,7 +66,7 @@ namespace CustomIdentity.Controllers
                 }
             }
 
-            return BadRequest("Invalid login attempt");
+            return BadRequest("Nieprawidłowa próba logowania");
         }
     }
 }

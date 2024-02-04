@@ -43,7 +43,7 @@ namespace CustomIdentity.Controllers
                     return RedirectToAction("Main", "Home");
                 }
 
-                ModelState.AddModelError("", "Invalid login attempt");
+                ModelState.AddModelError("", "Nieprawid³owa próba logowania");
             }
             return View(model);
         }
